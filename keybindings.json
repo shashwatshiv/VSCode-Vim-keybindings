@@ -1,0 +1,139 @@
+[
+ 
+  // FILE TREE
+  {
+    "key": "space e",
+    "command": "workbench.action.toggleSidebarVisibility",
+    "when": "filesExplorerFocus &&  !inputFocus"
+  },
+  {
+    "command": "workbench.action.toggleSidebarVisibility",
+    "key": "ctrl+e"
+  },
+  {
+    "command": "workbench.view.explorer",
+    "key": "ctrl+e",
+    "when": "!sideBarVisible"
+  },
+
+  {
+    "command": "workbench.view.explorer",
+    "key": "space e",
+    "when": "!sideBarVisible && ! inputFocus"
+  },
+  {
+    "key": "n",
+    "command": "explorer.newFile",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+  {
+    "command": "renameFile",
+    "key": "r",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+  {
+    "key": "shift+n",
+    "command": "explorer.newFolder",
+    "when": "explorerViewletFocus && !inputFocus"
+  },
+
+  {
+    "command": "deleteFile",
+    "key": "d",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+  // SUGGESTIONS AND AUTOCOMPLETION SHORTCUTS
+  {
+    // "ctrl+j": Selects the next suggestion in the suggestions widget when the widget is visible.
+    "key": "ctrl+j",
+    "command": "selectNextSuggestion",
+    "when": "suggestWidgetVisible"
+  },
+  {
+    // "ctrl+k": Selects the previous suggestion in the suggestions widget when the widget is visible.
+    "key": "ctrl+k",
+    "command": "selectPrevSuggestion",
+    "when": "suggestWidgetVisible"
+  },
+  {
+    // "ctrl+j": Selects the next item in the Quick Open dialog when it is open.
+    "key": "ctrl+j",
+    "command": "workbench.action.quickOpenSelectNext",
+    "when": "inQuickOpen"
+  },
+  {
+    // "ctrl+k": Selects the previous item in the Quick Open dialog when it is open.
+    "key": "ctrl+k",
+    "command": "workbench.action.quickOpenSelectPrevious",
+    "when": "inQuickOpen"
+  },
+  // TERMINAL SHORTCUTS
+  {
+    // Focus the terminal when the terminal is not focused
+    "key": "ctrl+shift+;",
+    "command": "workbench.action.terminal.focus"
+  },
+  {
+    // Focus the active editor group (text editor) when the terminal is focused
+    "key": "ctrl+shift+;",
+    "command": "workbench.action.focusActiveEditorGroup",
+    "when": "terminalFocus"
+  },
+  {
+    // Maximize/minimize terminal panel and focus on terminal when terminal is not focused
+    // (requires "multi-command" extension and "multiCommand.toggleMaximizedPanelAndFocusTerminal" command defined in settings.json)
+    "key": "ctrl+;",
+    "command": "workbench.action.terminal.toggleTerminal",
+    "when": "terminal.active"
+  },
+  {
+    "key": "ctrl+shift+a",
+    "command": "workbench.action.terminal.focusNext",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+shift+b",
+    "command": "workbench.action.terminal.focusPrevious",
+    "when": "terminalFocus"
+  },
+
+  {
+    "key": "ctrl+shift+n",
+    "command": "workbench.action.terminal.new"
+  },
+  {
+    "key": "ctrl+shift+w",
+    "command": "workbench.action.terminal.kill"
+  },
+  // to switch between editors fastly like switching tabs in chrome
+  {
+    "key": "alt+tab",
+    "command": "workbench.action.nextEditor"
+  },
+  // this will make ctrl + w behave normally for closing editor tabs and terminal tabs opened in vscode
+  {
+    "key": "ctrl+w",
+    "command": "-extension.vim_ctrl+w",
+    "when": "editorTextFocus && vim.active && vim.use<C-w> && !inDebugRepl"
+  },
+  {
+    "key": "h",
+    "command": "editor.action.scrollLeftHover",
+    "when": "editorHoverFocused"
+  },
+  {
+    "key": "j",
+    "command": "editor.action.scrollDownHover",
+    "when": "editorHoverFocused"
+  },
+  {
+    "key": "k",
+    "command": "editor.action.scrollUpHover",
+    "when": "editorHoverFocused"
+  },
+  {
+    "key": "l",
+    "command": "editor.action.scrollRightHover",
+    "when": "editorHoverFocused"
+  },
+]

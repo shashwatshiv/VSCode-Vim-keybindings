@@ -79,9 +79,8 @@
     "command": "workbench.action.focusActiveEditorGroup",
     "when": "terminalFocus"
   },
+ // toggle the terminal 
   {
-    // Maximize/minimize terminal panel and focus on terminal when terminal is not focused
-    // (requires "multi-command" extension and "multiCommand.toggleMaximizedPanelAndFocusTerminal" command defined in settings.json)
     "key": "ctrl+;",
     "command": "workbench.action.terminal.toggleTerminal",
     "when": "terminal.active"
@@ -96,7 +95,6 @@
     "command": "workbench.action.terminal.focusPrevious",
     "when": "terminalFocus"
   },
-
   {
     "key": "ctrl+shift+n",
     "command": "workbench.action.terminal.new"
@@ -116,6 +114,7 @@
     "command": "-extension.vim_ctrl+w",
     "when": "editorTextFocus && vim.active && vim.use<C-w> && !inDebugRepl"
   },
+ // scroll using h,j,k,l when hover is focused
   {
     "key": "h",
     "command": "editor.action.scrollLeftHover",

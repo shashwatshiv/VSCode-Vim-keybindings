@@ -1,0 +1,105 @@
+// VIM Configuration starts here
+{
+  "editor.lineNumbers": "relative",
+  "editor.scrollBeyondLastLine": false, // recommended by neovim
+  "vim.easymotion": true,
+  "vim.incsearch": true,
+  "vim.useSystemClipboard": true,
+  "vim.useCtrlKeys": true,
+  "vim.hlsearch": true,
+  "vim.leader": " ",
+  "vim.highlightedyank.enable": true,
+  "vim.highlightedyank.color": "#a9dc7660",
+  "vim.highlightedyank.duration": 250,
+  "vim.insertModeKeyBindings": [
+    {
+      // Pressing j twice ("before": ["j", "j"]) simulates the Esc key ("after": ["<Esc>"]).
+      "before": ["j", "j"],
+      "after": ["<Esc>"]
+    }
+  ],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    // new settings
+    {
+      "before": ["<leader>", "e"],
+      "commands": ["workbench.view.explorer"]
+    },
+    {
+      // Pressing ctrl+n clears search highlighting
+      "before": ["<C-n>"],
+      "commands": [":nohl"]
+    },
+    {
+      // Pressing K inserts a line break above the cursor.
+      "before": ["K"],
+      "commands": ["lineBreakInsert"],
+      "silent": true
+    },
+    {
+      // Pressing the leader key (Spacebar) followed by s splits the editor.
+      "before": ["<leader>", "s"],
+      "commands": ["workbench.action.splitEditor"]
+    },
+    {
+      // Pressing the leader key (Spacebar) followed by c comments the current line.
+      "before": ["<leader>", "c"],
+      "commands": ["editor.action.commentLine"]
+    },
+    // Pressing the leader key (Spacebar) followed by e to create terminal in editor area
+    {
+      "before": ["<leader>", "t"],
+      "commands": ["workbench.action.createTerminalEditor"]
+    },
+    {
+      // Pressing the leader key (Spacebar) followed by r and then e renames the current symbol.
+      "before": ["<leader>", "r", "e"],
+      "commands": ["editor.action.rename"]
+    },
+
+    // NAVIGATION
+    // switch b/w buffers
+    { "before": ["<S-h>"], "commands": [":bprevious"] },
+    { "before": ["<S-l>"], "commands": [":bnext"] },
+
+    // panes
+    {
+      "before": ["<leader>", "h"],
+      "commands": ["workbench.action.focusLeftGroup"]
+    },
+    {
+      "before": ["<leader>", "l"],
+      "commands": ["workbench.action.focusRightGroup"]
+    },
+    // NICE TO HAVE
+    { "before": ["<leader>", "w"], "commands": [":w!"] },
+    { "before": ["<leader>", "q"], "commands": [":q!"] },
+    { "before": ["<leader>", "x"], "commands": [":x!"] },
+    {
+      "before": ["[", "d"],
+      "commands": ["editor.action.marker.prev"]
+    },
+    {
+      "before": ["]", "d"],
+      "commands": ["editor.action.marker.next"]
+    },
+    //    opens quick open menu when leader is pressed then p is.
+    { "before": ["<leader>", "p"], "commands": ["workbench.action.quickOpen"] },
+    // press leader key followed by f , formats the document using available formatter
+    {
+      "before": ["<leader>", "f"],
+      "commands": ["editor.action.formatDocument"]
+    },
+    // previews the definiton of a function , can we undo with "esc" key
+    {
+      "before": ["g", "h"],
+      "commands": ["editor.action.showDefinitionPreviewHover"]
+    }
+  ],
+  // selects the lines in visual mode and press leader followed by c to comment all the lines
+  "vim.visualModeKeyBindings": [
+    {
+      "before": ["leader", "c"],
+      "commands": ["editor.action.commentLine", "extension.vim_escape"]
+    }
+  ]
+}
